@@ -1,15 +1,4 @@
-import {
-    _decorator,
-    Component,
-    ERigidBody2DType,
-    Label,
-    RigidBody2D,
-    Sprite,
-    tween,
-    UIOpacity,
-    v2,
-    v3,
-} from 'cc';
+import { _decorator, Component, Label, Sprite, tween, UIOpacity, v3 } from 'cc';
 const { ccclass, property } = _decorator;
 
 @ccclass('TitleShowComponent')
@@ -19,6 +8,12 @@ export class TitleShowComponent extends Component {
 
     @property(Sprite)
     mainCharactor: Sprite;
+
+    @property()
+    showDuration = 0.6;
+
+    @property()
+    hideDuration = 0.1;
 
     init() {
         this.clickTip.getComponent(UIOpacity).opacity = 0;
@@ -36,21 +31,17 @@ export class TitleShowComponent extends Component {
 
             this.hideClickTip();
             tween(opacityComponent)
-                .to(0.2, { opacity: 0 })
+                .to(this.hideDuration, { opacity: 0 })
                 .call(() => (this.enabled = false))
                 .start();
         });
 
         tween(this.node)
-            .to(0.6, {
+            .to(this.showDuration, {
                 position: v3(0, titleDestinationY, this.node.position.z),
             })
             .call(() => {
                 this.mainCharactor.enabled = true;
-
-                // const rigidbody = this.mainCharactor.getComponent(RigidBody2D);
-                // rigidbody.type = ERigidBody2DType.Dynamic;
-                // rigidbody.applyForceToCenter(v2(0, 1000), true);
 
                 this.showClickTip();
             })
@@ -59,13 +50,13 @@ export class TitleShowComponent extends Component {
 
     showClickTip() {
         const opacityComponent = this.clickTip.getComponent(UIOpacity);
-        tween(opacityComponent).to(0.6, { opacity: 255 }).start();
+        tween(opacityComponent).to(this.showDuration, { opacity: 255 }).start();
     }
 
     async hideClickTip() {
         const opacityComponent = this.clickTip.getComponent(UIOpacity);
         tween(opacityComponent)
-            .to(0.2, { opacity: 0 })
+            .to(this.hideDuration, { opacity: 0 })
             .call(() => (this.clickTip.enabled = false))
             .start();
     }
