@@ -1,5 +1,6 @@
 import {
     _decorator,
+    Collider,
     Component,
     ERigidBody2DType,
     RigidBody2D,

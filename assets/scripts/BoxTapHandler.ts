@@ -31,12 +31,12 @@ export class BoxController extends Component {
     rigidBody: RigidBody2D;
 
     start() {
-        PhysicsSystem2D.instance.debugDrawFlags =
-            EPhysics2DDrawFlags.Aabb |
-            EPhysics2DDrawFlags.Pair |
-            EPhysics2DDrawFlags.CenterOfMass |
-            EPhysics2DDrawFlags.Joint |
-            EPhysics2DDrawFlags.Shape;
+        // PhysicsSystem2D.instance.debugDrawFlags =
+        //     EPhysics2DDrawFlags.Aabb |
+        //     EPhysics2DDrawFlags.Pair |
+        //     EPhysics2DDrawFlags.CenterOfMass |
+        //     EPhysics2DDrawFlags.Joint |
+        //     EPhysics2DDrawFlags.Shape;
 
         this.rigidBody = this.getComponent(RigidBody2D);
         this.gameStateManager =
@@ -58,7 +58,7 @@ export class BoxController extends Component {
                 v3(touchPosition.x, touchPosition.y, 0),
                 worldPositionV3
             );
-            // let worldPosition = v2(worldPositionV3.x,worldPositionV3.y);
+
             let localPositionV3 =
                 this.getComponent(UITransform).convertToNodeSpaceAR(
                     worldPositionV3
@@ -80,36 +80,6 @@ export class BoxController extends Component {
             console.log(force, localTouchPosition);
 
             this.rigidBody.applyForce(force, localTouchPosition, true);
-
-            // const worldPosV3 = this.camera.screenToWorld(
-            //     v3(event.touch.getLocationY(), event.touch.getLocationY())
-            // );
-
-            // console.log(
-            //     'touch',
-            //     event.touch.getUILocation(),
-            //     '\nworldPos',
-            //     worldPosV3,
-            //     // '\nnodePos',
-            //     // this.getComponent(UITransform).convertToNodeSpaceAR(worldPosV3),
-            //     '\nmassCenter',
-            //     massCenter
-            // );
-
-            // const pos = v2(worldPosV3.x, worldPosV3.y);
-
-            // console.log(
-            //     massCenter.subtract(pos),
-            //     pos,
-            //     this.rigidBody.node.position
-            // );
-            // this.rigidBody.applyForce(
-            //     massCenter.subtract(pos).multiplyScalar(-1 * this.forceScale),
-            //     massCenter.subtract(pos),
-            //     true
-            // );
         }
     }
-
-    update(deltaTime: number) {}
 }
