@@ -7,6 +7,14 @@
     "expandedProjectPaths": [
     ],
     "fileStates": {
+        "rollbox_tiles.tmx": {
+            "scale": 0.72,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 500.6944444444444,
+                "y": 178.47222222222223
+            }
+        }
     },
     "last.imagePath": "/Users/mac/Desktop/bc/cocos/RollBox/assets/tilemaps",
     "map.lastUsedFormat": "tmx",
@@ -15,6 +23,7 @@
     ],
     "project": "untitled.tiled-project",
     "recentFiles": [
+        "rollbox_tiles.tmx"
     ],
     "tileset.lastUsedFormat": "tsx",
     "tileset.tileSize": {
