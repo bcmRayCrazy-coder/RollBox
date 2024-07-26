@@ -9,10 +9,10 @@ export class TitleShowComponent extends Component {
     @property(Sprite)
     mainCharactor: Sprite;
 
-    @property()
+    @property(Number)
     showDuration = 0.6;
 
-    @property()
+    @property(Number)
     hideDuration = 0.1;
 
     init() {
@@ -60,6 +60,4 @@ export class TitleShowComponent extends Component {
             .call(() => (this.clickTip.enabled = false))
             .start();
     }
-
-    update(deltaTime: number) {}
 }
