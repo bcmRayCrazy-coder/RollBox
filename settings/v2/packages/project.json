@@ -10,5 +10,17 @@
       }
     ],
     "increaseId": 1
+  },
+  "physics": {
+    "collisionGroups": [
+      {
+        "index": 1,
+        "name": "AREA"
+      }
+    ],
+    "collisionMatrix": {
+      "0": 1,
+      "1": 2
+    }
   }
 }

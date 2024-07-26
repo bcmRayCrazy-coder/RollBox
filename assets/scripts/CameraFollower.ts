@@ -14,15 +14,7 @@ export class CameraFollower extends Component {
 
     update(deltaTime: number) {
         const cameraPosition = this.camera.node.getPosition();
-        const targetPosition = this.target
-            .getPosition()
-            .add(
-                v3(
-                    this.camera.camera.width / 4,
-                    this.camera.camera.height / 4,
-                    0
-                )
-            );
+        const targetPosition = this.target.getPosition().add(v3(640, 360, 0));
         this.camera.node.setPosition(
             cameraPosition.lerp(targetPosition, deltaTime * this.moveSpeed)
         );
