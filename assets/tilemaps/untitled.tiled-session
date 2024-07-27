@@ -3,16 +3,21 @@
         "height": 4300,
         "width": 2
     },
-    "activeFile": "",
+    "activeFile": "rollbox_tiles.tmx",
     "expandedProjectPaths": [
+        "."
     ],
     "fileStates": {
+        "main_world.tsx": {
+            "scaleInDock": 0.9052,
+            "scaleInEditor": 1
+        },
         "rollbox_tiles.tmx": {
-            "scale": 0.72,
+            "scale": 0.3876,
             "selectedLayer": 0,
             "viewCenter": {
-                "x": 500.6944444444444,
-                "y": 178.47222222222223
+                "x": 233.48813209494324,
+                "y": 230.90815273477813
             }
         }
     },
@@ -20,9 +25,12 @@
     "map.lastUsedFormat": "tmx",
     "map.width": 60,
     "openFiles": [
+        "main_world.tsx",
+        "rollbox_tiles.tmx"
     ],
     "project": "untitled.tiled-project",
     "recentFiles": [
+        "main_world.tsx",
         "rollbox_tiles.tmx"
     ],
     "tileset.lastUsedFormat": "tsx",
